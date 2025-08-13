@@ -1,15 +1,41 @@
 # Ignore everything by default
 *
 
+# allow git to traverse dirs
+!*/
+
 # But not these!
+# gitignore itself should be allowed
 !.gitignore
+# nvim
 !nvim/
+!nvim/**
+# hyperland configs
 !hypr/
+!hypr/**
+# meaw!
 !kitty/
+!kitty/**
+# some scripts
 !scripts/
+!scripts/**
+# waybar
 !waybar/
+!waybar/**
+# wlogout
 !wlogout/
+!wlogout/**
+# wofi
 !wofi/
+!wofi/**
+# yazi
 !yazi/
+!yazi/**
+# electron
 !zed/
+!zed/**
+# install scripts
 !*.sh
+!*.md
+!nvidia.hook
+!80-nvidia-pm.rules
