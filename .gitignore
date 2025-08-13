@@ -1,0 +1,15 @@
+# Ignore everything by default
+*
+
+# But not these!
+!.gitignore
+!nvim/
+!hypr/
+!kitty/
+!scripts/
+!waybar/
+!wlogout/
+!wofi/
+!yazi/
+!zed/
+!*.sh
