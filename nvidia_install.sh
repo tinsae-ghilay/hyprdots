@@ -8,12 +8,12 @@ setup(){
 
     echo "adding pacman hook"
     # create hooks folder first
-    curl -fsSL https://raw.githubusercontent.com/tinsae-ghilay/mySetup/refs/heads/main/nvidia.hook -o /etc/pacman.d/hooks/nvidia.hook
+    curl -fsSL https://raw.githubusercontent.com/tinsae-ghilay/hyprdots/refs/heads/master/nvidia.hook -o /etc/pacman.d/hooks/nvidia.hook
 
     echo "Adding nvidia modul parameters"
     echo 'options nvidia NVreg_DynamicPowerManagement=0x02' > /etc/modprobe.d/nvidia-pm.conf
     echo "adding udev rules"
-    curl -fsSL https://raw.githubusercontent.com/tinsae-ghilay/mySetup/refs/heads/main/80-nvidia-pm.rules -o /etc/udev/rules.d/80-nvidia-pm.rules
+    curl -fsSL https://raw.githubusercontent.com/tinsae-ghilay/hyprdots/refs/heads/master/80-nvidia-pm.rules -o /etc/udev/rules.d/80-nvidia-pm.rules
 
 }
 

@@ -73,7 +73,7 @@ echo "Generating fstab..."
 genfstab -U /mnt >> /mnt/etc/fstab || { echo "fstab generation failed. Exiting."; exit 1; }
 echo "fstab generated."
 
-curl https://raw.githubusercontent.com/tinsae-ghilay/mySetup/refs/heads/main/setup.sh -o /mnt/setup.sh
+curl https://raw.githubusercontent.com/tinsae-ghilay/hyprdots/refs/heads/master/setup.sh -o /mnt/setup.sh
 
 chmod +x /mnt/setup.sh
 
