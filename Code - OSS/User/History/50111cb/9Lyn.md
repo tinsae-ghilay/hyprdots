@@ -150,7 +150,7 @@ The following shortcuts (Key binds are in hyprland's config file). ***NOTE:*** N
 
 | **Keybinding**                        | **Action**                             |
 |---------------------------------------|----------------------------------------|
-| ` + Q`                        | Open terminal   U+1F5D1                       |
+| ` + Q`                        | Open terminal                          |
 | ` + C`                        | Kill active window                     |
 | ` + M`                        | Exit session                           |
 | ` + E`                        | Open file manager                      |
