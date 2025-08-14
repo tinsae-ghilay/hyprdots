@@ -39,3 +39,6 @@
 !*.md
 !nvidia.hook
 !80-nvidia-pm.rules
+# because scripts inside Code - OSS gets pushed
+Code - OSS/
+Code - OSS/**/*

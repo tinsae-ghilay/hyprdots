@@ -84,7 +84,7 @@ pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpaper hyprshot hyp
 pacman -S --needed --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && echo "--- DONE ---"
 
 # qt wayland support + wlogout dependencies
-pacman -S --needed --noconfirm qt5-wayland qt6-wayland meson scdoc && echo "--- DONE ---"
+pacman -S --needed --noconfirm qt5-wayland qt6-wayland meson scdoc yazi && echo "--- DONE ---"
 
 # audio
 pacman -S --needed --noconfirm pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack && echo "--- DONE ---"
@@ -197,7 +197,7 @@ echo "systemd-boot configured with arch.conf and fallback-arch.conf."
 
 # copying dot files
 echo "copying config files"
-git clone https://github.com/tinsae-ghilay/mySetup.git /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
+git clone https://github.com/tinsae-ghilay/hyprdots.git /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
 # just incase, setting ownership of config files to user
 chown -cR "$USERNAME_INPUT" /home/"$USERNAME_INPUT"/.config
 
