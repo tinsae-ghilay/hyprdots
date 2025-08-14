@@ -179,7 +179,7 @@ echo "Should we install nvidia proprietary drivers?"
 read answer
 
 if [ "$answer" = "y" ]; then
-curl https://raw.githubusercontent.com/tinsae-ghilay/mySetup/refs/heads/main/nvidia_install.sh -o nvidia.sh
+curl https://raw.githubusercontent.com/tinsae-ghilay/hyprdots/refs/heads/master/nvidia_install.sh -o nvidia.sh
 chmod +x nvidia.sh && ./nvidia.sh
 fi
 
