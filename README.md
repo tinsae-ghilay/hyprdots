@@ -56,10 +56,13 @@ $ timedatectl list-timezones
 ## How it looks
 
 Code -Oss, wofi and waybar open
-![alt text](hypr/wallpapers/shot.png)
+![Screen capture with Vscode and wofi open and waybar vissible](hypr/wallpapers/shot.png)
 
 wallpaper and waybar
-![alt text](hypr/wallpapers/wallp.png)
+![Scrren shot of Wallpaper with waybar vissible](hypr/wallpapers/wshot.png)
+
+Browser without waybar
+![Screen capture of Browser open in Full screen with waybar hidden](hypr/wallpapers/bshot.png)
 
 ## installed packages
 
