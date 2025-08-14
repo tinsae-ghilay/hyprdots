@@ -3,6 +3,9 @@
 set -e
 
 echo "Inside chroot. Continuing configuration..."
+# easier for maintainance to just declare the base urls and reuse it
+URL="https://raw.githubusercontent.com/tinsae-ghilay/hyprdots/refs/heads/master"
+REPO="https://github.com/tinsae-ghilay/hyprdots.git"
 
 # root password
 echo "should there be root password? y for yes (recomended no, thus disabling root login)"
@@ -84,13 +87,13 @@ pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpaper hyprshot hyp
 pacman -S --needed --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && echo "--- DONE ---"
 
 # qt wayland support + wlogout dependencies
-pacman -S --needed --noconfirm qt5-wayland qt6-wayland meson scdoc yazi && echo "--- DONE ---"
+pacman -S --needed --noconfirm qt5-wayland qt6-wayland meson scdoc && echo "--- DONE ---"
 
 # audio
 pacman -S --needed --noconfirm pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack && echo "--- DONE ---"
 
 # msic needed
-pacman -S --needed --noconfirm swaync kitty wofi firefox code spotify-launcher waybar wl-clip-persist && echo "--- DONE ---"
+pacman -S --needed --noconfirm swaync kitty wofi firefox code spotify-launcher discord yazi waybar wl-clip-persist && echo "--- DONE ---"
 
 # print bluetooth and brightness services
 pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils blueman bluez-cups && echo "--- DONE ---"
@@ -107,9 +110,6 @@ pacman -S --needed --noconfirm ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-e
 # X11 support
 pacman -S --needed --noconfirm xorg-xwayland && echo "--- DONE ---"
 
-# Display Manager (greetd with Regreet)
-# pacman -S --needed --noconfirm greetd  	greetd-gtkgreet && echo "--- DONE ---"
-
 # I found ly to be straight forward and enough
 pacman -S --needed --noconfirm ly && echo "--- DONE ---"
 
@@ -120,7 +120,6 @@ echo "Enabling essential services..."
 systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
 systemctl enable cups.service
-#systemctl enable greetd.service
 systemctl enable ly.service
 
 # Enable PipeWire user services (these will start automatically on first graphical login)
@@ -179,8 +178,11 @@ echo "Should we install nvidia proprietary drivers?"
 read answer
 
 if [ "$answer" = "y" ]; then
-curl https://raw.githubusercontent.com/tinsae-ghilay/hyprdots/refs/heads/master/nvidia_install.sh -o nvidia.sh
-chmod +x nvidia.sh && ./nvidia.sh
+
+	# fetch script
+	curl "$URL"/nvidia_install.sh -o nvidia.sh
+	chmod +x nvidia.sh && ./nvidia.sh
+
 fi
 
 # Create fallback-arch.conf (fallback boot entry)
@@ -197,9 +199,29 @@ echo "systemd-boot configured with arch.conf and fallback-arch.conf."
 
 # copying dot files
 echo "copying config files"
-git clone https://github.com/tinsae-ghilay/hyprdots.git /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
+git clone "$REPO" /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
 # just incase, setting ownership of config files to user
 chown -cR "$USERNAME_INPUT" /home/"$USERNAME_INPUT"/.config
+
+# Installing wlogout
+
+echo "Installing wlogout from upstream source"
+git clone https://github.com/ArtsyMacaw/wlogout.git && cd wlogout
+meson build
+ninja -C build
+ninja -C build install
+echo "DONE"
+
+echo "Do you want to set up a strict firewall? y / n"
+read response
+if [ "$response " = "y" ]; then
+	# fetch script
+	curl ""$URL"/firewall.sh" -o firewall.sh
+	chmod +x firewall.sh
+	./firewall.sh
+fi
+
+# final good byes
 
 echo "Should we exit chroot environment or there some thing to do? y = exit"
 read response
@@ -208,3 +230,5 @@ if [ "$response" = "y" ]; then
 exit
 
 fi
+echo "echo cleaning self"
+rm -- "$0"
