@@ -243,7 +243,7 @@ The following shortcuts (Key binds are in hyprland's config file). ***NOTE:*** N
 |---------------------------------------|----------------------------------------|
 | `🪟 + PRINT`                    | Screenshot window                      |
 | `PRINT`                               | Screenshot monitor                     |
-| `Shift + PRINT`                   | Screenshot region                      |
+| `$shiftMod + PRINT`                   | Screenshot region                      |
 
 ## Custom Commands
 
