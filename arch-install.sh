@@ -80,7 +80,6 @@ chmod +x /mnt/setup.sh
 # Chroot into the new system and continue configuration ---
 echo "Entering chroot environment..."
 arch-chroot /mnt /setup.sh
-
 # --- 4. Final Steps (Outside Chroot) ---
 echo "--- Arch Linux Hyprland Installation COMPLETE! ---"
 echo ""
@@ -92,8 +91,7 @@ echo "You can now unmount your partitions and reboot into your new system.Unmoun
 read response
 if [ "$response" = "y" ]; then
 	umount -R /mnt
-	echo "unmounted, now rebooting"
+	echo "unmounted, now rebooting Bye!"
 	reboot
 fi
-echo "to unmount : umount -R /mnt"
 

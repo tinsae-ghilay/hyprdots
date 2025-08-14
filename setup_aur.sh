@@ -11,3 +11,6 @@ su "$1" -c "
 
 pacman -U /home/$1/wlogout/*.pkg.tar.zst --noconfirm
 rm -rf /home/$1/wlogout
+
+echo "Done , cleaning up"
+rm -- "$0"
