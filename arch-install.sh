@@ -81,6 +81,8 @@ chmod +x /mnt/setup.sh
 echo "Entering chroot environment..."
 arch-chroot /mnt /setup.sh
 # --- 4. Final Steps (Outside Chroot) ---
+# remove chroot setup script first because it wouldnt remove itself somehow
+rm /mnt/setup.sh
 echo "--- Arch Linux Hyprland Installation COMPLETE! ---"
 echo ""
 echo "--- Post-Reboot Steps (Run these as your NEW USER after first login) ---"

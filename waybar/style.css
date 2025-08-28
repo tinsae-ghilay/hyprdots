@@ -7,7 +7,8 @@
 @define-color text_h #FFFFFF;
 @define-color text #89B4FA;
 @define-color transparent rgba(0,0,0,0.0);
-@define-color border #0781B5;
+/*@define-color border #0781B5;*/
+@define-color border rgba(70, 150, 205, 0.5);
 
 
 * {

@@ -93,7 +93,7 @@ pacman -S --needed --noconfirm qt5-wayland qt6-wayland meson scdoc && echo "--- 
 pacman -S --needed --noconfirm pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack && echo "--- DONE ---"
 
 # msic needed
-pacman -S --needed --noconfirm swaync kitty wofi firefox code spotify-launcher discord yazi waybar wl-clip-persist && echo "--- DONE ---"
+pacman -S --needed --noconfirm swaync kitty wofi firefox code spotify-launcher discord yazi waybar wl-clip-persist libreoffice-fresh && echo "--- DONE ---"
 
 # print bluetooth and brightness services
 pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils blueman bluez-cups && echo "--- DONE ---"
@@ -230,5 +230,3 @@ if [ "$response" = "y" ]; then
 exit
 
 fi
-echo "echo cleaning self"
-rm -- "$0"
