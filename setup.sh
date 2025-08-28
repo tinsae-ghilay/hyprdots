@@ -181,7 +181,10 @@ if [ "$answer" = "y" ]; then
 
 	# fetch script
 	curl "$URL"/nvidia_install.sh -o nvidia.sh
+	# make executable and run
 	chmod +x nvidia.sh && ./nvidia.sh
+	# clean up
+	rm nvidia.sh
 
 fi
 
@@ -217,8 +220,12 @@ read response
 if [ "$response " = "y" ]; then
 	# fetch script
 	curl ""$URL"/firewall.sh" -o firewall.sh
+	# make executable
 	chmod +x firewall.sh
+	# run
 	./firewall.sh
+	# after we are done installing, we clean up
+	rm firewall.sh
 fi
 
 # final good byes

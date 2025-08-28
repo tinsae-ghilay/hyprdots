@@ -34,4 +34,3 @@ fi
 
 setup
 echo "DONE -> cleaning up "
-rm -- "$0"
