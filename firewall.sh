@@ -99,4 +99,4 @@ systemctl enable iptables
 systemctl restart iptables
 systemctl status iptables --no-pager
 
-echo "Firewall rules applied and iptables service started. cleaning self"
+echo "Firewall rules applied and iptables service started."
