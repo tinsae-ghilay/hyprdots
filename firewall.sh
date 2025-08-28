@@ -44,6 +44,10 @@ iptables -N UDP
 # Allow all traffic on the loopback interface
 iptables -A INPUT -i lo -j ACCEPT
 
+# needed for local send
+iptables -A TCP -p tcp --dport 53317 -j ACCEPT
+iptables -A UDP -p udp --dport 53317 -j ACCEPT
+
 # Allow established and related incoming traffic
 iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
@@ -96,4 +100,3 @@ systemctl restart iptables
 systemctl status iptables --no-pager
 
 echo "Firewall rules applied and iptables service started. cleaning self"
-rm -- "$0"
