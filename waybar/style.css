@@ -2,7 +2,7 @@
 /*--------------------------*/
 /*         colours          */
 /*--------------------------*/
-@define-color bg #004546;
+@define-color bg #1F2124;
 @define-color bg_h #047F66;
 @define-color text_h #FFFFFF;
 @define-color text #89B4FA;
@@ -21,7 +21,7 @@
 }
 
 window#waybar {
-    background: @transparent;
+    background:@transparent;
     /*color: #cdd6f4;*/
 }
 
@@ -38,7 +38,7 @@ tooltip {
     padding: 0 7px;
    /* margin-right: 2px;
     margin-left: 2px;*/
-    color: @text;
+    color: @text_h;
     border-radius: 8px;
 }
 
@@ -78,7 +78,7 @@ tooltip {
 #custom-weather,
 #custom-screen,
 #backlight {
-    color: @text;
+    color: @text_h;
     background:@bg; /*#004549;*/
     padding: 0px 10px;
     border: 1px solid @border;
@@ -102,8 +102,8 @@ tooltip {
 #custom-recording:hover,
 #custom-screen:hover,
 #backlight:hover {
-    color: @text_h;
-    background: #047f66;
+    color: @text;
+    /* background: #047f66; */
 }
 
 #custom-weather{
@@ -113,7 +113,7 @@ tooltip {
 }
 
 #custom-memory {
-    color: @text;
+    color: @text_h;
 }
 
 #custom-temperature {
@@ -126,16 +126,15 @@ tooltip {
 
 #custom-power,
 #custom-menu {
-    color: @text;
+    color: @text_h;
     background-color: @bg;
     padding: 0px 5px;
     border: 1px solid @border;
 }
 
 #custom-recording,
-#custom-swaync,
 #custom-Screen{
-	color:@text;
+	color:@text_h;
  	/*border-top: 1px solid #047fff;
  	border-bottom: 1px solid #047fff;
  	border-left:none;
@@ -183,7 +182,7 @@ tooltip {
 }
 
 #custom-power_profile {
-    color: @text;
+    color: @text_h;
     border-left: 0px;
     border-right: 0px;
 }
@@ -194,19 +193,19 @@ tooltip {
     margin-right: 60px;
 }
 #tray{
-    color: @text;
+    color: @text_h;
     border-right:none;
     border-radius: 10px 0px 0px 10px;
     margin-left: 5px;
 }
 #clock {
-    color: @text;
+    color: @text_h;
     border-radius: 10px;
     margin-left: 5px;
 }
 
 #pulseaudio {
-    color: @text;
+    color: @text_h;
     border-left: none;
     /*border-right: 1px solid #047fff;*/
 }
@@ -225,8 +224,8 @@ tooltip {
 
 
 #battery {
-    color: @text;
-    border-radius: 0 10px 10px 0;
+    color: @text_h;
+    border-radius: 10px;
     margin-right: 5px;
 }
 #battery.warning {
@@ -242,7 +241,7 @@ tooltip {
 }
 
 #custom-spotify{
-	color:@text;
+	color:@text_h;
 }
 
 
