@@ -44,7 +44,7 @@
 !Code - OSS/User/*.json
 # may be I am using vscodium
 Code - OSS/
-Code - OSS/**/*
+Code - OSS/**
 
 # discord
 discord/
