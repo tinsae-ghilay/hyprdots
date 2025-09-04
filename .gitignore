@@ -19,6 +19,9 @@
 # some scripts
 !scripts/
 !scripts/**
+# Swaync
+!swaync/
+!swaync/**
 # waybar
 !waybar/
 !waybar/**
