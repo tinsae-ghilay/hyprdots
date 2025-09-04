@@ -1,0 +1,22 @@
+{
+    "breadcrumbs.enabled": false,
+    "telemetry.editStats.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "workbench.statusBar.visible": false,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Fira Code','Droid Sans Mono', 'monospace'",
+    "editor.fontSize": 17,
+    "editor.fontLigatures": true,
+    "window.menuStyle": "custom",
+    "window.menuBarVisibility": "compact",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "workbench.colorCustomizations": {
+            "activityBar.background": "#303035",
+            "sideBar.background":"#28282C",
+            "window.activeBorder":"#0084FF",
+            "editor.background":"#1D1D20",
+        },
+        "git.autofetch": true,
+        "explorer.confirmDelete": false
+    }
