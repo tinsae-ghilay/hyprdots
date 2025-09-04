@@ -42,18 +42,13 @@
 !README.md
 !nvidia.hook
 !80-nvidia-pm.rules
-# because scripts inside Code - OSS gets pushed
-!Code - OSS/
-!Code - OSS/User/
-Code - OSS/
+# Recursively ignore everything inside VS code flavours, as I may use any
 Code - OSS/**
-!Code - OSS/User/*.json
-# may be I am using vscodium
-!VSCodium/
-!VSCodium/User/
-!VSCodium/User/*.json
-VSCodium/
 VSCodium/**
+
+# But un-ignore the specific .json files
+!Code - OSS/User/*.json
+!VSCodium/User/*.json
 
 # discord
 discord/
