@@ -36,9 +36,16 @@
 !zed/**
 # install scripts
 !*.sh
-!*.md
+!README.md
 !nvidia.hook
 !80-nvidia-pm.rules
 # because scripts inside Code - OSS gets pushed
+
+!Code - OSS/user/*.json
+# may be I am using vscodium
 Code - OSS/
 Code - OSS/**/*
+
+# discord
+discord/
+discord/**

@@ -1,5 +1,5 @@
 ## My Set up
-Here are my hyprland + waybar config files.
+Here are my hyprland + waybar and other config files.
 
 I start by partitioning, formatting disks mounting them, enabling multilib on live iso and connecting to internet, after that
 i curl the starting script with 
@@ -17,7 +17,7 @@ The above info is for me. If by any chance some one finds this and wants to use 
 ```bash
 $ localectl list-keymaps
 
-de   # this is generay quertz keyboard
+de   # this is the general German quertz keyboard
 de-latin1 # German with dead keys
 de-latin1-nodeadkeys # german with no deadkeys -> what I want
 de-mobii
@@ -25,7 +25,7 @@ de_CH-latin1 # swiss german
 de_alt_UTF-8
 ``` 
 
-so when it asks for keymap i type `de-latin1-nodeadkeys`
+so when it asks for keymap I type `de-latin1-nodeadkeys`
 
 > ## *WARNING!!!* 
 > For now if Keyboard layout is given a wrong value, script will fail. so input carefully

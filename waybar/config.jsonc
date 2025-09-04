@@ -25,8 +25,9 @@
 	"on-click": "activate",
 	"active-only": true,
     	"persistent-workspaces": {
-		"eDP-1": [1, 2, 3, 4, 5], // 1 -5 in monitor 1
-      		"HDMI-A-1":[6, 7, 8, 9, 10] // 6-10 in monitor 2
+		      "eDP-1": [1, 2, 3, 4, 5] //, // 1 -5 in monitor 1
+      		//"HDMI-A-1":[6, 7, 8, 9, 10],
+          //"DP-1":[6, 7, 8, 9, 10] // 6-10 in monitor 2
    	 }
   },
 
