@@ -41,7 +41,7 @@
 !80-nvidia-pm.rules
 # because scripts inside Code - OSS gets pushed
 
-!Code - OSS/user/*.json
+!Code - OSS/User/*.json
 # may be I am using vscodium
 Code - OSS/
 Code - OSS/**/*
