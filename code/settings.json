@@ -15,7 +15,7 @@
             "activityBar.background": "#303035",
             "sideBar.background":"#28282C",
             "window.activeBorder":"#0084FF",
-            "editor.background":"#1D1D20",
+            "editor.background":"#1D1D20"
         },
         "git.autofetch": true,
         "explorer.confirmDelete": false
