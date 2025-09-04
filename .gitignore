@@ -43,11 +43,14 @@
 !nvidia.hook
 !80-nvidia-pm.rules
 # because scripts inside Code - OSS gets pushed
-
+!Code - OSS/
+!Code - OSS/User/
 Code - OSS/
 Code - OSS/**
 !Code - OSS/User/*.json
 # may be I am using vscodium
+!VSCodium/
+!VSCodium/User/
 !VSCodium/User/*.json
 VSCodium/
 VSCodium/**
