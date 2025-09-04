@@ -121,7 +121,7 @@ pacman -S --needed --noconfirm ly && echo "--- DONE ---"
 
 #### After Install
 
-`Wlogout` is only found in Aur, So It has to be manully installed
+`Wlogout` <strike> is only found in Aur, So It has to be manully installed
 the following can be used
 
 ```bash
@@ -137,6 +137,9 @@ gpg --import key.asc
 # Build and install
 makepkg -si # --noconfirm can be added if needed
 ```
+</strike>
+
+is installed from upstream.
 
 ### Display manager
 [Ly](https://github.com/fairyglade/ly) is installed for login and [Hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/) for locking session
