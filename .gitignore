@@ -42,6 +42,9 @@
 !README.md
 !nvidia.hook
 !80-nvidia-pm.rules
+# allow some in these folders
+!Code - OSS/
+!VSCodium/
 # Recursively ignore everything inside VS code flavours, as I may use any
 Code - OSS/**
 VSCodium/**
