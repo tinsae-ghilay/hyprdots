@@ -1,15 +1,12 @@
-
 /*--------------------------*/
-/*         colours          */
+/* colours          */
 /*--------------------------*/
 @define-color bg #1F2124;
 @define-color bg_h #047F66;
 @define-color text_h #FFFFFF;
 @define-color text #89B4FA;
 @define-color transparent rgba(0,0,0,0.0);
-/*@define-color border #0781B5;*/
 @define-color border rgba(70, 150, 205, 0.5);
-
 
 * {
     border: none;
@@ -21,23 +18,27 @@
 }
 
 window#waybar {
-    background:@transparent;
-    /*color: #cdd6f4;*/
+    background: @transparent;
 }
 
 tooltip {
     background: @bg;
     border-radius: 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: @border;
+    border: 1px solid @border;
     opacity: 0.9;
+}
+
+/*--------------------------*/
+/* Workspaces        */
+/*--------------------------*/
+#workspaces {
+    background: @bg;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 
 #workspaces button {
     padding: 0 7px;
-   /* margin-right: 2px;
-    margin-left: 2px;*/
     color: @text_h;
     border-radius: 8px;
 }
@@ -45,7 +46,6 @@ tooltip {
 #workspaces button.active {
     color: @text_h;
     background-color: @border;
-    /*border-bottom: 1px solid #047fff;*/
 }
 
 #workspaces button.focused {
@@ -59,199 +59,183 @@ tooltip {
     border-radius: 10px;
 }
 
-
 #workspaces button:hover {
     background: @bg_h;
 }
-#custom-recording,
-#custom-power_profile,
-#window,
-#clock,
+
+/*--------------------------*/
+/* Modules         */
+/*--------------------------*/
+#backlight,
 #battery,
-#pulseaudio,
-#tray,
-#network,
+#clock,
+#custom-memory,
+#custom-power,
+#custom-power_profile,
+#custom-recording,
+#custom-screen,
+#custom-spotify,
 #custom-swaync,
 #custom-temperature,
-#custom-memory,
-#workspaces,
 #custom-weather,
-#custom-screen,
-#backlight {
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#tray,
+#window {
     color: @text_h;
-    background:@bg; /*#004549;*/
+}
+
+#backlight,
+#battery,
+#clock,
+#custom-memory,
+#custom-power,
+#custom-power_profile,
+#custom-recording,
+#custom-screen,
+#custom-spotify,
+#custom-swaync,
+#custom-temperature,
+#custom-weather,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#tray {
+    background: @bg;
     padding: 0px 10px;
     border: 1px solid @border;
 }
 
-#custom-power_profile:hover,
-#custom-weather:hover,
-#custom-moon:hover,
-#custom-wallpaper:hover,
-#window:hover,
-#clock:hover,
+#backlight:hover,
 #battery:hover,
-#pulseaudio:hover,
-#network:hover,
-#custom-swaync:hover,
-#custom-temperature:hover,
-#custom-memory:hover,
-#workspaces button:hover,
+#clock:hover,
 #custom-menu:hover,
+#custom-moon:hover,
+#custom-memory:hover,
 #custom-power:hover,
+#custom-power_profile:hover,
 #custom-recording:hover,
 #custom-screen:hover,
-#backlight:hover {
+#custom-swaync:hover,
+#custom-temperature:hover,
+#custom-wallpaper:hover,
+#custom-weather:hover,
+#network:hover,
+#pulseaudio:hover,
+#power-profiles-daemon:hover,
+#window:hover {
     color: @text;
-    /* background: #047f66; */
 }
 
-#custom-weather{
-	margin:0 5px;
-	padding:0 7px;
-	border-radius:10px;
+/* Module-specific styles */
+#window {
+    border-radius: 10px;
+    margin: 0 60px;
 }
 
-#custom-memory {
-    color: @text_h;
+#custom-weather {
+    margin: 0 5px;
+    padding: 0 7px;
+    border-radius: 10px;
 }
 
 #custom-temperature {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0 0 10px;
 }
 
-#custom-temperature.critical {
+#custom-temperature.critical,
+#custom-screen.active,
+#custom-recording.active {
     color: red;
 }
 
 #custom-power,
 #custom-menu {
-    color: @text_h;
     background-color: @bg;
-    padding: 0px 5px;
+    padding: 0 5px;
     border: 1px solid @border;
 }
 
+#custom-power,
+#custom-menu,
 #custom-recording,
-#custom-Screen{
-	color:@text_h;
- 	/*border-top: 1px solid #047fff;
- 	border-bottom: 1px solid #047fff;
- 	border-left:none;
- 	border-right:none;*/
- 	padding:0 10px;
-	font-size:24px;
+#custom-screen {
+    font-size: 22px;
+}
+
+/* Specific border fixes for modules */
+#tray {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    margin-left: 5px;
 }
 
 #custom-swaync {
+    border-left: none;
     border-radius: 0 10px 10px 0;
-    border-left:none;
-}
-
-#custom-spotify {
-	margin-left:10px;
-	
 }
 
 #custom-power {
-    font-size: 22px;
-    border-right: 0px;
+    border-right: 0;
     border-radius: 10px 0 0 10px;
 }
+
 #custom-menu {
-    font-size: 22px;
-    border-left: 0px;
+    border-left: 0;
     border-radius: 0 10px 10px 0;
 }
 
 #backlight {
-    border-radius: 10px 0px 0px 10px;
-    margin-left:5px;
-}
-/*#tray {
-    border-radius: 10px;
-}*/
-
-
-#workspaces {
-    background: @bg;
-    border-radius: 10px;
-    margin-left: 10px;
-    /*padding-right: 5px;
-    padding-left: 5px;*/
-}
-
-#custom-power_profile {
-    color: @text_h;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-#tray{
-    color: @text_h;
-    border-right:none;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0 0 10px;
     margin-left: 5px;
 }
+
 #clock {
-    color: @text_h;
     border-radius: 10px;
     margin-left: 5px;
 }
 
 #pulseaudio {
-    color: @text_h;
     border-left: none;
-    /*border-right: 1px solid #047fff;*/
 }
-
-#pulseaudio.microphone {
-    border-left:none;
-    border-right:none;
-}
-
-#custom-Screen.active{
-	color:red;
-}
-#custom-recording.active{
-   color:red;
-}
-
 
 #battery {
-    color: @text_h;
-    border-radius: 10px;
-    margin-right: 5px;
+    border-radius: 10px 0 0 10px;
+    margin-right: 0;
+    border-right: none;
 }
+
 #battery.warning {
     color: #ffa500;
 }
+
 #battery.critical {
     color: red;
 }
+
 #custom-moon {
-    border-radius: 0px 10px 10px 0px;
-    border-right: 0px;
-    margin-left: 0px;
+    border-radius: 0 10px 10px 0;
+    border-right: 0;
 }
 
-#custom-spotify{
-	color:@text_h;
+#power-profiles-daemon {
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    margin-right: 5px;
 }
 
-
+/*--------------------------*/
+/* Menu           */
+/*--------------------------*/
 menu {
-	border-radius: 10px;
-	padding:3px;
-	border: 1px solid #047fff;
-	background: @bg;
+    border-radius: 10px;
+    padding: 3px;
+    border: 1px solid #047fff;
+    background: @bg;
 }
+
 menuitem {
-	border-radius: 5px;
-	margin:5px;
+    border-radius: 5px;
+    margin: 5px;
 }

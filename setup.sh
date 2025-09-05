@@ -102,7 +102,7 @@ pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez 
 pacman -S --needed --noconfirm loupe gnome-text-editor nautilus nwg-look gnome-keyring evince polkit-gnome && echo "--- DONE ---"
 
 # android and ntfs support
-pacman -S --needed --noconfirm ntfs-3g android-udev gvfs scrcpy && echo "--- DONE ---"
+pacman -S --needed --noconfirm ntfs-3g android-udev gvfs scrcpy power-profiles-daemon && echo "--- DONE ---"
 
 # fonts
 pacman -S --needed --noconfirm ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-liberation ttf-roboto cantarell-fonts ttf-fira-code ttf-hack ttf-jetbrains-mono-nerd adobe-source-code-pro-fonts && echo "--- DONE ---"
@@ -121,6 +121,7 @@ systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
 systemctl enable cups.service
 systemctl enable ly.service
+systemctl enable power-profiles-daemon.service
 
 # Enable PipeWire user services (these will start automatically on first graphical login)
 # systemctl enable pipewire pipewire-pulse wireplumber
