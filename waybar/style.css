@@ -224,6 +224,16 @@ tooltip {
     border-radius: 0 10px 10px 0;
     margin-right: 5px;
 }
+#power-profiles-daemon.performance{
+    color: #ffa500;
+}
+#power-profiles-daemon.balanced{
+    color: #047fff;
+
+}
+#power-profiles-daemon.power-saver{
+    color: aquamarine;
+}
 
 /*--------------------------*/
 /* Menu           */

@@ -96,10 +96,10 @@ pacman -S --needed --noconfirm pipewire wireplumber pipewire-pulse pipewire-alsa
 pacman -S --needed --noconfirm swaync kitty wofi firefox code spotify-launcher discord yazi waybar wl-clip-persist libreoffice-fresh && echo "--- DONE ---"
 
 # print bluetooth and brightness services
-pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils blueman bluez-cups && echo "--- DONE ---"
+pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils blueberry bluez-cups && echo "--- DONE ---"
 
 # gnome apps
-pacman -S --needed --noconfirm loupe gnome-text-editor nautilus nwg-look gnome-keyring evince polkit-gnome && echo "--- DONE ---"
+pacman -S --needed --noconfirm loupe gnome-text-editor nautilus nwg-look gnome-keyring evince polkit-gnome gnome-calendar && echo "--- DONE ---"
 
 # android and ntfs support
 pacman -S --needed --noconfirm ntfs-3g android-udev gvfs scrcpy power-profiles-daemon && echo "--- DONE ---"
