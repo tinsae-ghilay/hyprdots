@@ -16,6 +16,7 @@
     "tray",
     "custom/swaync",
     "battery",
+    "power-profiles-daemon",
     "custom/power"
   ],
   
@@ -106,21 +107,8 @@
  // },
   "clock": {
     "format": "{:%A %B %d, %Y | %H:%M}",
-    //"format": "{:%H:%M}",
-    "tooltip-format": "<tt><big>{calendar}</big></tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "on-click-right": "mode",
-      "format": {
-        "months": "<span color='#047fff'><b>{}</b></span>",
-        "days": "<span color='#ffffff'><b>{} </b></span>",
-        "weeks": "<span color='#89b4fa'><b>W{} </b></span>",
-        "weekdays": "<span color='#89b4fa'><b>{} </b></span>",
-        "today": "<span color='#047fff'><b><u>{}</u></b></span>"
-      }
-    }
+    "tooltip":false,
+    "on-click": "pgrep -x gnome-calendar && pkill -9 gnome-calendar || gnome-calendar"
   },
  
   "custom/power": {
@@ -158,5 +146,16 @@
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": " ",
+      "power-saver": ""
+    }
   }
 }
