@@ -73,7 +73,7 @@ echo "User $USERNAME_INPUT added to sudoers."
 #  Enable Multilib ---
 echo "Enabling Multilib repository..."
 # Uncomment the [multilib] section in pacman.conf
-sed -i '/^#\[multilib\]/{N;s/#//g}' /etc/pacman.conf || { echo "Multilib enablement failed."; }
+sed -i '/^#\[multilib\]/{N;s/#//g}' /etc/pacman.conf || { echo "Could not enable Multilib."; }
 pacman -Sy --needed --noconfirm # Sync package databases after enabling multilib
 echo "Multilib enabled. and synced"
 
