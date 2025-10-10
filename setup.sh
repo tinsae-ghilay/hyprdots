@@ -77,23 +77,11 @@ sed -i '/^#\[multilib\]/{N;s/#//g}' /etc/pacman.conf || { echo "Could not enable
 pacman -Sy --needed --noconfirm # Sync package databases after enabling multilib
 echo "Multilib enabled. and synced"
 
-# Install Hyprland and all other packages ---
-echo "Installing Hyprland and all specified packages..."
-
-# hyprecosystem
-pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpaper hyprshot hyprpolkitagent hyprsunset && echo "--- DONE ---"
-
-# xdg desktop portal
-pacman -S --needed --noconfirm xdg-desktop-portal-hyprland xdg-desktop-portal-gtk && echo "--- DONE ---"
-
-# qt wayland support + wlogout dependencies
-pacman -S --needed --noconfirm qt5-wayland qt6-wayland meson scdoc && echo "--- DONE ---"
-
 # audio
 pacman -S --needed --noconfirm pipewire wireplumber pipewire-pulse pipewire-alsa pipewire-jack && echo "--- DONE ---"
 
 # msic needed
-pacman -S --needed --noconfirm swaync kitty wofi firefox code spotify-launcher discord yazi waybar wl-clip-persist libreoffice-fresh && echo "--- DONE ---"
+pacman -S --needed --noconfirm firefox code spotify-launcher discord && echo "--- DONE ---"
 
 # print bluetooth and brightness services
 pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils blueberry bluez-cups && echo "--- DONE ---"
@@ -110,9 +98,6 @@ pacman -S --needed --noconfirm ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-e
 # X11 support
 pacman -S --needed --noconfirm xorg-xwayland && echo "--- DONE ---"
 
-# I found ly to be straight forward and enough
-pacman -S --needed --noconfirm ly && echo "--- DONE ---"
-
 echo "all packages installed."
 
 # --- 3.7. Enable Services ---
@@ -120,13 +105,8 @@ echo "Enabling essential services..."
 systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
 systemctl enable cups.service
-systemctl enable ly.service
-systemctl enable power-profiles-daemon.service
 
-# Enable PipeWire user services (these will start automatically on first graphical login)
-# systemctl enable pipewire pipewire-pulse wireplumber
-
-echo "Services enabled."
+echo "General Services enabled."
 
 # systemd-boot Bootloader Installation ---
 echo "Installing systemd-boot bootloader..."
@@ -200,22 +180,6 @@ EOL_FALLBACK
 
 echo "systemd-boot configured with arch.conf and fallback-arch.conf."
 
-
-# copying dot files
-echo "copying config files"
-git clone "$REPO" /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
-# just incase, setting ownership of config files to user
-chown -cR "$USERNAME_INPUT" /home/"$USERNAME_INPUT"/.config
-
-# Installing wlogout
-
-echo "Installing wlogout from upstream source"
-git clone https://github.com/ArtsyMacaw/wlogout.git && cd wlogout
-meson build
-ninja -C build
-ninja -C build install
-echo "DONE"
-
 echo "Do you want to set up a strict firewall? y / n"
 read response
 if [ "$response " = "y" ]; then
@@ -227,6 +191,20 @@ if [ "$response " = "y" ]; then
 	./firewall.sh
 	# after we are done installing, we clean up
 	rm firewall.sh
+fi
+
+# installing DE or WM
+echo "Are we installing? y / n"
+read response
+if [ "$response " = "y" ]; then
+	# fetch script
+	curl ""$URL"/gui_installer.sh" -o gui_installer.sh
+	# make executable
+	chmod +x gui_installer.sh
+	# run
+	./gui_installer.sh
+	# after we are done installing, we clean up
+	rm gui_installer.sh
 fi
 
 # final good byes
