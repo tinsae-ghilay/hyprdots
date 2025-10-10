@@ -182,7 +182,7 @@ echo "systemd-boot configured with arch.conf and fallback-arch.conf."
 
 echo "Do you want to set up a strict firewall? y / n"
 read response
-if [ "$response " = "y" ]; then
+if [ "$response" = "y" ]; then
 	# fetch script
 	curl ""$URL"/firewall.sh" -o firewall.sh
 	# make executable
@@ -196,7 +196,7 @@ fi
 # installing DE or WM
 echo "Are we installing? y / n"
 read response
-if [ "$response " = "y" ]; then
+if [ "$response" = "y" ]; then
 	# fetch script
 	curl ""$URL"/gui_installer.sh" -o gui_installer.sh
 	# make executable
