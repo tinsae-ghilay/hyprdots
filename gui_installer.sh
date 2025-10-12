@@ -7,6 +7,8 @@ echo "2, Hyprland"
 echo "3, Plasma"
 read DE
 
+USERNAME_INPUT="$1"
+
 copy_dot_files(){
   # copying dot files
   echo "copying config files"

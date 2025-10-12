@@ -202,7 +202,7 @@ if [ "$response" = "y" ]; then
 	# make executable
 	chmod +x gui_installer.sh
 	# run
-	./gui_installer.sh
+	./gui_installer.sh $USERNAME_INPUT
 	# after we are done installing, we clean up
 	rm gui_installer.sh
 fi
