@@ -38,24 +38,24 @@ install_hyprland(){
   pacman -S --needed --noconfirm ly && echo "Ly Installed successfuly"
 
   # services specifically need for hyprland
-  systemctl enable ly.service
+  systemctl enable ly@tty1.service
   systemctl enable power-profiles-daemon.service
 
   # copying dot files
-  echo "copying config files"
-  git clone "$REPO" /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
-  # just incase, setting ownership of config files to user
-  chown -cR "$USERNAME_INPUT" /home/"$USERNAME_INPUT"/.config
+  #echo "copying config files"
+  #git clone "$REPO" /home/$USERNAME_INPUT/.config && echo "---- DONE CLONING DOT FILES! ----" || { echo "looks like config will have to be cloned manualy !"; }
+  #just incase, setting ownership of config files to user
+  #chown -cR "$USERNAME_INPUT" /home/"$USERNAME_INPUT"/.config
 
   copy_dot_files
   
   # Installing wlogout
-  echo "Installing wlogout from upstream source"
-  git clone https://github.com/ArtsyMacaw/wlogout.git && cd wlogout
-  meson build
-  ninja -C build
-  ninja -C build install
-  echo "DONE"
+  #echo "Installing wlogout from upstream source"
+ # git clone https://github.com/ArtsyMacaw/wlogout.git && cd wlogout
+  #meson build
+  #ninja -C build
+  #ninja -C build install
+  #echo "DONE"
 }
 
 
