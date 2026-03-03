@@ -84,7 +84,7 @@ pacman -S --needed --noconfirm pipewire wireplumber pipewire-pulse pipewire-alsa
 pacman -S --needed --noconfirm firefox code spotify-launcher discord && echo "--- DONE ---"
 
 # print bluetooth and brightness services
-pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils blueberry bluez-cups && echo "--- DONE ---"
+pacman -S --needed --noconfirm brightnessctl cups cups-filters gutenprint bluez bluez-utils bluez-cups && echo "--- DONE ---"
 
 # gnome apps
 pacman -S --needed --noconfirm loupe gnome-text-editor nautilus nwg-look gnome-keyring evince polkit-gnome gnome-calendar && echo "--- DONE ---"
