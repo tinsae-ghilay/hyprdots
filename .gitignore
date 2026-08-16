@@ -16,6 +16,9 @@
 # nvim
 !nvim/
 !nvim/**
+
+!wm/
+!wm/**
 # hyperland configs
 !hypr/
 !hypr/**
