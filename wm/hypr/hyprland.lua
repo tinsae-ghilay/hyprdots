@@ -27,7 +27,7 @@ hl.monitor({
 ---- AUTOSTART ----
 -------------------
 
-require("hyprconfigs/startup")
+-- require("hyprconfigs/startup")
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -43,14 +43,14 @@ hl.env("HYPRCURSOR_SIZE", "24")
 ----- PERMISSIONS -----
 -----------------------
 
-require("hyprconfigs/permissions")
+-- require("hyprconfigs/permissions")
 
 --------------------------
 ---   looks and feel   ---
 --------------------------
-require("hyprconfigs/looks")
+-- require("hyprconfigs/looks")
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
-require("hyperconfigs/animations")
+-- require("hyprconfigs/animations")
 
 ----------------
 ----  MISC  ----
@@ -63,20 +63,23 @@ hl.config({
     },
 })
 
+-- all configs are in hyprconfigs subdirectory. import all
+require("./hyprconfigs/*")
+
 
 ---------------
 ---- INPUT ----
 ---------------
 
-require("hyprconfigs/input")
+-- require("hyprconfigs/input")
 
 
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
-require("hyprconfigs/input")
+-- require("hyprconfigs/binds")
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-require("hyprconfigs/spaces")
+-- require("hyprconfigs/spaces")
