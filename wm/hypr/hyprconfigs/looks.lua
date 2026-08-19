@@ -1,7 +1,3 @@
-----------------------
---- looks and feel ---
-----------------------
-
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------
@@ -9,13 +5,17 @@
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in  = 5,
-        gaps_out = 20,
+        gaps_in  = 1,
+        gaps_out = 2,
 
-        border_size = 2,
+        border_size = 1,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            active_border   = {
+                -- NOTE: we may also have multiple colours and how theyd look,eg.
+                -- colours = {"rgba(colour1)", "rgba(colour2)", "rgba(colour3)", angle=n°}
+                colors = { "rgba(33ccffee)" },
+            },
             inactive_border = "rgba(595959aa)",
         },
 
@@ -29,7 +29,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 3,
+        rounding       = 5,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
