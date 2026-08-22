@@ -16,6 +16,9 @@
 # nvim
 !nvim/
 !nvim/**
+# cosmic
+!cosmic/
+!cosmic/**
 
 !wm/
 !wm/**
